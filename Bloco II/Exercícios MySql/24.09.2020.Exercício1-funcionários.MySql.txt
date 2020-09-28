@@ -1,0 +1,39 @@
+-- criando a database:
+
+create database db_rh;
+
+-- criando a tabela funcionarios 
+
+use db_rh;
+
+create table tb_funcionarios(
+id bigint auto_increment,
+nome varchar(35) not null,
+cpf varchar(12)not null,
+cargo varchar(15),
+salario float,
+idade int not null,
+
+ PRIMARY KEY (id)
+);
+
+-- populando a tabela:
+
+insert into tb_funcionarios(nome,cpf,cargo, salario,idade) values ("José da Silva","125369853-12","Diretor",27000.00 ,32);
+insert into tb_funcionarios(nome, cpf,cargo, salario, idade) values ("Bilbo Bolseiro", "185693485-25","Gerente",7800.00,28);
+insert into tb_funcionarios(nome,cpf,cargo, salario,idade) values ("Peter Parker","859746325-25","Supervisor", 4500.00,37);
+insert into tb_funcionarios(nome, cpf, cargo, salario, idade) values ("Lisbeth Salander", "369524856-36","Superintendente",22000.00,42);
+insert into tb_funcionarios (nome,cpf,cargo, salario,idade) values ("Sherlock Holmes","968597425-13","Analista de RH",13500.00,47);
+insert into tb_funcionarios(nome, cpf, cargo, salario, idade) values ("Sansa Stark", "529863147-52", "Estagiaria", 1700, 19)
+
+-- Vendo todos os funcionários com salário maior que 20000
+
+select*from tb_funcionarios where salario > 2000;
+
+-- Vendo todos os funcionários com salário menor que 20000
+
+select*from tb_funcionarios where salario < 2000;
+
+-- alterando um dado da tabela
+
+update tb_funcionarios set nome= "Lionel Messi " where id=1

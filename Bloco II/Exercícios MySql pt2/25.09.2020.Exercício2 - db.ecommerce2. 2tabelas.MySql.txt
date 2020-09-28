@@ -1,0 +1,60 @@
+-- criando database
+create database db_ecommerce2;
+
+-- criando tables:
+use db_ecommerce2;
+create table tb_produto(
+id bigint auto_increment,
+nome varchar(55) not null,
+preço double not null,
+tamanho varchar(5)not null,
+primary key(id)
+);
+
+create table tb_categoria(
+id bigint auto_increment,
+categoria varchar(55) not null,
+marca varchar(55),
+ativo boolean,
+produto_id bigint not null,
+
+primary key(id),
+foreign key(produto_id) references tb_produto(id)
+);
+
+
+-- populando a tabela produto:
+insert into tb_produto(nome, preço, tamanho) values("Saia Midi",99.00,"M");
+insert into tb_produto(nome, preço, tamanho) values("Calça Jeans",130.00,"G");
+insert into tb_produto(nome, preço, tamanho) values("Cardigã",345.00,"Único");
+insert into tb_produto(nome, preço, tamanho) values("Calça Jeans",130.00,"PP");
+insert into tb_produto(nome, preço, tamanho) values("Blusa básica",49.90,"M");
+insert into tb_produto(nome, preço, tamanho) values("Vestido abelhas",110.20,"12");
+insert into tb_produto(nome, preço, tamanho) values("Cinto",65.00,"M");
+insert into tb_produto(nome, preço, tamanho) values("Brincos argola",19.20,"Único");
+insert into tb_produto(nome, preço, tamanho) values("Macaquinho", 130.29,"10");
+insert into tb_produto(nome, preço, tamanho) values("Macacão linho", 180.90, "M");
+insert into tb_produto(nome, preço, tamanho) values("Calça saruel", 159.90, "P");
+insert into tb_produto(nome, preço, tamanho) values("Sapatilha rosa",89.00,"12");
+insert into tb_produto(nome, preço, tamanho) values("Sapatilha animal print", 119.90, "38");
+insert into tb_produto(nome, preço, tamanho) values("Vestido longo",220.00, "M");
+insert into tb_produto(nome, preço, tamanho) values("Calça pantacourt", 159.60,"G");
+insert into tb_produto(nome, preço, tamanho) values("Camiseta", 89.90, "M");
+insert into tb_produto(nome, preço, tamanho) values("Camisa",160.00,"GG");
+
+-- populando a tabela categoria
+insert into tb_categoria(categoria, marca, ativo, produto_id) values ("Feminino", "Animale", true, 1);
+insert into tb_categoria(categoria, marca, ativo, produto_id) values ("Masculino", "Forum", true,2);
+insert into tb_categoria(categoria, marca, ativo, produto_id) values ("Acessórios","Fórum",true,7);
+insert into tb_categoria(categoria, marca, ativo, produto_id) values ("Infantil", "Lilica Repilica",true, 6);
+insert into tb_categoria(categoria, marca, ativo, produto_id) values ("Masculina","Zara",false, 17);
+
+-- pesquisa de valores acima de 200 na tabela de produtos:
+
+select*from tb_produto where preço >200;
+
+-- pesquisa valores entre 100 e 200 na tabela de produtos:
+select*from tb_produto where preço >100 and preço<200;
+
+-- select de produtos que começam com a letra c:
+select*from tb_produto where nome like "c%";

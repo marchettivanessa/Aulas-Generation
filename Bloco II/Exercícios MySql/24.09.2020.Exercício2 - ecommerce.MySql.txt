@@ -1,0 +1,41 @@
+******EXERCÍCIO 2********
+
+-- criando a database
+create database db_ecommerce;
+
+-- criando a tabela com os atributos:
+
+use db_ecommerce;
+
+create table tb_produtos(
+codigo bigint auto_increment,
+nome varchar(15) not null,
+preco double not null,
+tamanho varchar(4) not null,
+disponivel boolean,
+
+primary key(codigo)
+);
+
+-- populando a tabela:
+
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Vestido Midi", 299.90,"M",true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Vestido Midi", 299.90,"G",true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Mesa de centro",350.00,"U", true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Calça Jeans",120.00,"PP", true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values ("Saia",89.90,"GG",true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Vestido Midi", 299.90,"M",true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Cinto",40.00,"U", true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values("Calça Jeans",120.00,"M", true);
+insert into tb_produtos(nome, preco, tamanho, disponivel) values ("Saia",89.90,"GG",true);
+insert into tb_produtos(nome, preco,tamanho, disponivel) values("Patins",520.00,"U",true)
+
+-- select dos produtos com o valor maior do que 500:
+select*from tb_produtos where preco > 500;
+
+-- select dos produtos com o valor menor do que 500:
+select*from tb_produtos where preco < 500;
+
+-- query de atualização de dados da tabela:
+
+UPDATE tb_produtos SET disponivel = false where codigo = 3;

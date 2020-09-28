@@ -1,0 +1,66 @@
+******EXERCÍCIO 2********
+
+-- criando a database
+create database db_ecommerce;
+
+-- criando a tabela com os atributos:
+
+use db_ecommerce;
+
+create table tb_produtos(
+codigo bigint auto_increment,
+nome varchar(15) not null,
+preco double not null,
+tamanho varchar(4) not null,
+disponivel boolean,
+
+
+-- criando database:
+create database db_escola
+
+--criando table:
+
+use db_escola;
+create table tb_alunos(
+id bigint auto_increment,
+nome varchar(40) not null,
+data_nascimento date not null,
+endereco varchar(60) not null,
+serie varchar(35) not null,
+nota int,
+aprovado boolean,
+
+primary key(id)
+);
+
+-- inserindo valores na tabela:
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado)
+values("Lisbeth Salander","1990-05-16","Rua Estocolmo, n.40, Vila Operária, São Paulo-SP","7ªSérie -A",8,true);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Frodo Baggins", "1989-12-28","Rua do Condado, n.79, São Paulo-SP","8ª Série B",6,false);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Bruce Wayne", "2010-11-12","Rua Gotham, n.879, São Paulo-SP","2º Ano Ensino Médio",9,true);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Titus Andromedon", "2010-08-12","Rua Nova York, n.1239, São Paulo-SP","4ª Série",8,true);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Cristina Yang", "2004-04-22","Rua Seattle, n.19, São Paulo-SP","2º Ensino Médio",9,true);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Beyonce da Silva", "2003-05-16","Rua do Sucesso, n.1598, São Paulo-SP","3º Ensino Médio",10,true);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Draco Malfoy", "2013-01-12","Rua dos Pavões, n.2331, São Paulo-SP","1ª Série",6,false);
+insert into tb_alunos(nome,data_nascimento,endereco,serie,nota,aprovado) 
+values("Harry Potter", "2010-11-22","Rua dos Sagitários, n.349, São Paulo-SP","4ª Série",6,false);
+
+-- select dos alunos com nota acima de 7:
+
+select*from tb_alunos where nota >7;
+
+-- select dos alunos com nota menor que 7:
+select*from tb_alunos where nota <7;
+
+-- atualizando dados:
+update tb_alunos SET data_nascimento="2008-06-05"  where id=1;
+update tb_alunos set data_nascimento="2009-07-15" where id=2;
+update tb_alunos set nome="Beyonce Gisele Knowles Cartes" where id=6;
+
+

@@ -1,0 +1,56 @@
+******EXERCÍCIO 1*******
+-- criando database
+create database db_RH2;
+
+-- criando table cargo:
+
+use db_RH2;
+create table tb_cargo(
+id bigint auto_increment,
+nome_cargo varchar(35)not null,
+area varchar(25)not null,
+descrição varchar(55),
+primary key(id)
+);
+-- criando table funcionário:
+use db_RH2;
+create table tb_funcionario(
+id bigint auto_increment,
+nome varchar(50) not null,
+CPF varchar(12) not null,
+salário double not null,
+data_nasc date not null,
+estado_civil varchar(15),
+cargo_id bigint not null,
+
+primary key(id),
+foreign key(cargo_id) references tb_cargo (id)
+);
+
+-- populando tabela cargo:
+insert into tb_cargo(nome_cargo,area,descrição) values("Head","Recursos Humanos","Responsável pela área de RH" );
+insert into tb_cargo(nome_cargo,area,descrição) values ("Gerente","Comercial","Gerente da área comercial home");
+insert into tb_cargo(nome_cargo, area,descrição) values("Analista Junior","Jurídico","Responsável pela Due Diligence Imobiliária");
+insert into tb_cargo(nome_cargo, area, descrição) values("Engenheiro de Software Pleno","Tecnologia","Desenvolve softwares e apps e gerencia projetos");
+insert into tb_cargo(nome_cargo, area, descrição) values("Estagiário","Suporte Técnico","Responsável pelo auxílio administrativo da área");
+
+-- populando tabela funcionário:
+insert into tb_funcionario(nome,CPF,salário,data_nasc,estado_civil,cargo_id)
+values("Rony Weasley","258965769-13",7800.00,"1990-05-16","Casado",2);
+insert into tb_funcionario(nome, CPF, salário, data_nasc, estado_civil, cargo_id)
+values("Kimmy Schmidt","478596328-63",4500.00,"1995-06-17","Solteira",3);
+insert into tb_funcionario(nome, CPF, salário, data_nasc, estado_civil, cargo_id)
+values("Michael Jordan", "569364118-26",19500.00,"1975-04-05","Casado",1);
+insert into tb_funcionario(nome,CPF,salário,data_nasc,estado_civil,cargo_id)
+values("Ada Lovelace","369856321-56",12570.00,"1991-12-09","Divorciada",4);
+insert into tb_funcionario (nome, CPF, salário, data_nasc, estado_civil, cargo_id)
+values("Duda Dursley","458963259-45",1500.00,"1996-07-25","Solteiro",5);
+
+-- select de salários maiores que 2000:
+select*from tb_funcionario where salário > 2000;
+
+-- select de salários entre 1000 e 2000:
+select*from tb_funcionario where salário >1000 and salário <2000;
+
+-- usando LIKE para pesquisar nomes que começam com a letra C:
+SELECT*FROM tb_funcionario where nome like "mi%";
