@@ -3,20 +3,12 @@ package poo;
 public class TesteAnimal {
 	public static void main(String args[]) 
 	{
-		Cachorro dog = new Cachorro("fes", 9, "arf", "lento",null);
-		dog.setNome("Amadeu");
-		dog.setEmiteSom("latido");
-		dog.setCorrer("pouco");
+		Cachorro dog = new Cachorro("Legolas", 9, "arf", "o dog corre");
 		
-		Cavalo horse = new Cavalo("Gandalf", 10, null);
-		horse.setNome("Julio");
-		horse.setEmiteSom("relinchar");
-		horse.setCorrerC("cavalgar");
+		Cavalo horse = new Cavalo("Gandalf", 10, "ririri", "ele cavalga");
 		
-		Preguica sloth = new Preguica("JO",2, "ouuwhnnn", "esc");
-		sloth.setNome("Josefa");
-		sloth.getEmiteSom();
-		sloth.setSobeArvore("escala");
+		
+		Preguica sloth = new Preguica("Cibele",2, "ouuwhnnn", "ela dorme abraçadinha na árvore");
 		
 		Animal[] animals = new Animal[3];
 		animals[0]=dog;
@@ -24,9 +16,7 @@ public class TesteAnimal {
 		animals[2]=sloth;
 		
 		for(Animal i:animals) {
-			System.out.println(i.getNome());
-			System.out.println(i.getIdade());
 			System.out.println(i.getEmiteSom());
-		}
-	}
+		}	
+}
 }

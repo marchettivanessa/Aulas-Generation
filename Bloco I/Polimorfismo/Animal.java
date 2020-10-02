@@ -5,14 +5,20 @@ public class Animal {
 	protected int idade;
 	protected String emiteSom;
 	
-	//construtor
-	public Animal(String nome, int idade, String emiteSom) 
-	{
+	public Animal(String nome, int idade, String emiteSom) {
 		this.nome=nome;
 		this.idade=idade;
-		this.emiteSom=emiteSom;
+		this.emiteSom = emiteSom;
 	}
-	
+
+	public String getEmiteSom() {
+		return emiteSom;
+	}
+
+	public void setEmiteSom(String emiteSom) {
+		this.emiteSom = emiteSom;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -25,12 +31,5 @@ public class Animal {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public String getEmiteSom() {
-		return emiteSom;
-	}
-	public void setEmiteSom(String emiteSom) {
-		this.emiteSom = emiteSom;
-	}
-	
-	
 }
+

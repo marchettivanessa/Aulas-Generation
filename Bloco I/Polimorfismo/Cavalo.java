@@ -1,47 +1,23 @@
 package poo;
 
 public class Cavalo extends Animal{
-	private String correrC;
-	private String cavalgar;
+	private String corre;
 
-	public Cavalo(String nome, int idade, String emiteSom)
+	public Cavalo(String nome, int idade, String emiteSom, String corre)
 	{
 		super(nome, idade, emiteSom);
-		this.correrC=correrC;
-		this.cavalgar=cavalgar;
-		
-	}
-	public String getCorrerC() {
-		return correrC;
+		this.corre = corre;
 	}
 
-	public void setCorrerC(String correrC) {
-		this.correrC = correrC;
+	public String getCorre() {
+		return corre;
+	}
+
+	public void setCorre(String corre) {
+		this.corre = corre;
 	}
 	
-	public String getNome() 
-	{
-		return "O nome do cavalo é: "+ super.getNome()+".";
-	}
 	
-	public int getIdade() 
-	{
-		return super.getIdade();
-	}
+
 	
-	public String getEmiteSom()
-	{
-		return "O som do cavalo é um "+super.getEmiteSom()+".";
-	}
-	
-	public String getCavalgar() {
-		return cavalgar;
-	}
-	public void setCavalgar(String cavalgar) {
-		this.cavalgar = cavalgar;
-	}
-	public String cavalgar()
-	{
-		return "Um cavalor não corre, ele "+ correrC;
-	}
 }
